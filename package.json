@@ -1,0 +1,21 @@
+{
+  "name": "convert",
+  "version": "1.0.0",
+  "description": "Library to perform common converting operations",
+  "main": "convert.js",
+  "dependencies": {
+    "jest": "^26.0.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-typescript": "^7.0.0-alpha.19"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "babel src -d js"
+  },
+  "author": "Stephen Gladney",
+  "license": "ISC"
+}
