@@ -6,8 +6,7 @@ export type ConvertCaseFormats =
   | "pascal"
   | "string"
 
-// export function convertCase(str: string) {
-export function convertCase(str) {
+export function convertCase(str: string) {
   return {
     from: (formatIn: ConvertCaseFormats) => {
       let wordArray = []
