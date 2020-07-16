@@ -7,6 +7,8 @@ export function convertTemperature(temp: number) {
   }
 }
 
+export function measurement(n: number) {}
+
 export type ConvertCaseFormats =
   | "const"
   | "snake"
@@ -15,6 +17,13 @@ export type ConvertCaseFormats =
   | "pascal"
   | "string"
 
+/**
+ Valid cases: "const", "snake", "kabob", "camel", "pascal", "string"
+ *
+ * ```
+ *convertCase("helloWorld").from("camel").to("pascal") // "HelloWorld"
+ * ```
+ */
 export function convertCase(str: string) {
   return {
     from: (formatIn: ConvertCaseFormats) => {
