@@ -1,3 +1,12 @@
+export function convertTemperature(temp: number) {
+  const celsiusToFahrenheit = () => (temp / 5) * 9 + 32
+  const fahrenheitToCelsius = () => ((temp - 32) * 5) / 9
+  return {
+    celsiusToFahrenheit,
+    fahrenheitToCelsius
+  }
+}
+
 export type ConvertCaseFormats =
   | "const"
   | "snake"

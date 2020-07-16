@@ -1,4 +1,4 @@
-import { convertCase, ConvertCaseFormats } from "./convert"
+import { convertCase, ConvertCaseFormats, convertTemperature } from "./convert"
 
 var caseTypes: ConvertCaseFormats[] = [
   "camel",
@@ -29,5 +29,12 @@ describe("convertCase", () => {
         // })
       })
     })
+  })
+})
+
+describe("convertTemperature", () => {
+  it("converts Celsius to Fahrenheit", () => {
+    expect(convertTemperature(0).celsiusToFahrenheit()).toEqual(32)
+    expect(convertTemperature(32).fahrenheitToCelsius()).toEqual(0)
   })
 })
