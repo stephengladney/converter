@@ -25,7 +25,7 @@ convertLength(2)
 
 ### convertCase
 
-Convert a string from one casing to another.
+String from one casing to another.
 _(Supported cases: camel, const, kabob, pascal, snake, string)_<br><br>
 _Example:_
 
@@ -33,7 +33,9 @@ _Example:_
 convertCase("helloWorld").toPascal() // "HelloWorld"
 ```
 
-**convertTemperature** - convert a temperature from/to Celsius/Fahrenheit<br><br>
+### convertTemperature
+
+Temperature from/to Celsius/Fahrenheit<br><br>
 _Example:_
 
 ```typescript
@@ -41,7 +43,9 @@ convertTemperature(100).celsiusToFahrenheit() // 212
 convertTemperature(32).fahrenheitToCelsius() // 0
 ```
 
-**convertLength** - convert a length from one unit to another (metric or imperial)<br><br>
+### convertLength
+
+Length from one unit to another (metric or imperial)<br><br>
 _Example:_
 
 ```typescript
