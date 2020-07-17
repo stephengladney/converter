@@ -1,8 +1,12 @@
-# Helpful Tips
+# convert.ts
+
+This is library I created in order to perform common conversions. If you'd like to add a conversion method, feel free to reach out to become a contributor.
+
+## Helpful tips
 
 - All methods that return numerical values can accept `{decimals: n}` in the last method of the chain, where n is the number of decimals places
 
-# Methods
+## Methods
 
 **convertCase** - convert a string from one casing to another<br>
 _Supported cases: camel, const, kabob, pascal, snake, string_
