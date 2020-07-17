@@ -26,7 +26,17 @@ convertLength(2)
 ### `convertCase`
 
 String from one casing to another.
-_(Supported cases: camel, const, kabob, pascal, snake, string)_<br><br>
+
+<details open>
+<summary>Supported cases</summary>
+- camel
+- const
+- kabob
+- pascal
+- snake
+- string
+</details>
+<br><br>
 _Example:_
 
 ```typescript
