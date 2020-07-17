@@ -30,12 +30,12 @@ String from one casing to another.
 <details>
 <summary>Supported cases</summary>
 <ul>
-<li>camel</li>
-<li>const</li>
-<li>kabob</li>
-<li>pascal</li>
-<li>snake</li>
-<li>string</li>
+<li>camelCase</li>
+<li>CONST_CASE</li>
+<li>kabob-case</li>
+<li>PascalCase</li>
+<li>snake_case</li>
+<li>string case</li>
 </ul>
 </details>
 
