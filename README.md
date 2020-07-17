@@ -27,14 +27,16 @@ convertLength(2)
 
 String from one casing to another.
 
-<details open>
+<details>
 <summary>Supported cases</summary>
-- camel
-- const
-- kabob
-- pascal
-- snake
-- string
+<ul>
+<li>camel</li>
+<li>const</li>
+<li>kabob</li>
+<li>pascal</li>
+<li>snake</li>
+<li>string</li>
+</ul>
 </details>
 <br><br>
 _Example:_
