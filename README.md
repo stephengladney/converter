@@ -23,8 +23,9 @@ convertLength(2)
 
 ## Methods
 
-**convertCase** - convert a string from one casing to another<br>
-_Supported cases: camel, const, kabob, pascal, snake, string_<br><br>
+###convertCase###
+Convert a string from one casing to another.
+_(Supported cases: camel, const, kabob, pascal, snake, string)_<br><br>
 _Example:_
 
 ```typescript
