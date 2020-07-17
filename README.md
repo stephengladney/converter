@@ -42,8 +42,4 @@ convertTemperature(32).fahrenheitToCelsius() // 0
 convertLength(2)
   .miles()
   .toKilometers() // 3.218688
-
-convertLength(2)
-  .miles()
-  .toKilometers({ decimals: 2 }) // 3.22
 ```
