@@ -60,7 +60,7 @@ convertTemperature(32).fahrenheitToCelsius() // 0
 Length from one unit to another (metric or imperial)
 
 <details>
-<summary>Supported cases</summary>
+<summary>Supported units</summary>
 <ul>
 <br><li><b>Metric</b></li>
 <ul><li>millimeters</li>
