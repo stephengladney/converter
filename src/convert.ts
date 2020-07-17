@@ -7,17 +7,26 @@ export function convertTemperature(temp: number) {
   }
 }
 
-export function convertLength(n: number, decimals?: number) {
+export function convertLength(n: number) {
+  type DecimalPoints = { decimals: number }
   let inMillimeters: number
+
+  const convertToFloat = (val: number, d?: DecimalPoints) =>
+    d ? Number(val.toFixed(d.decimals)) : val
+
   const outputMethods = {
-    toCentimeters: () => inMillimeters / 10,
-    toFeet: () => inMillimeters / (25.4 * 12),
-    toInches: () => inMillimeters / 25.4,
-    toKilometers: () => inMillimeters / 1000000,
-    toMeters: () => inMillimeters / 1000,
-    toMiles: () => inMillimeters / (25.4 * 12 * 5280),
-    toMillimeters: () => inMillimeters,
-    toYards: () => inMillimeters / (25.4 * 12 * 3)
+    toCentimeters: (d?: DecimalPoints) => convertToFloat(inMillimeters / 10, d),
+    toFeet: (d?: DecimalPoints) =>
+      convertToFloat(inMillimeters / (25.4 * 12), d),
+    toInches: (d?: DecimalPoints) => convertToFloat(inMillimeters / 25.4, d),
+    toKilometers: (d?: DecimalPoints) =>
+      convertToFloat(inMillimeters / 1000000, d),
+    toMeters: (d?: DecimalPoints) => convertToFloat(inMillimeters / 1000, d),
+    toMiles: (d?: DecimalPoints) =>
+      convertToFloat(inMillimeters / (25.4 * 12 * 5280), d),
+    toMillimeters: (d?: DecimalPoints) => convertToFloat(inMillimeters, d),
+    toYards: (d?: DecimalPoints) =>
+      convertToFloat(inMillimeters / (25.4 * 12 * 3), d)
   }
   const inputMethods = {
     millimeters: () => {

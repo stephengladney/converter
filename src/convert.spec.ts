@@ -60,10 +60,28 @@ describe("convertLength", () => {
       })
     })
   })
+
+  test("applies appropriate float when requested", () => {
+    expect(
+      convertLength(2)
+        .miles()
+        .toKilometers({ decimals: 2 })
+    ).toEqual(3.22)
+    expect(
+      convertLength(2)
+        .miles()
+        .toMeters({ decimals: 1 })
+    ).toEqual(3218.7)
+    expect(
+      convertLength(2)
+        .miles()
+        .toMeters({ decimals: 0 })
+    ).toEqual(3219)
+  })
 })
 
 describe("convertTemperature", () => {
-  it("converts Celsius to Fahrenheit", () => {
+  test("converts Celsius to Fahrenheit", () => {
     expect(convertTemperature(0).celsiusToFahrenheit()).toEqual(32)
     expect(convertTemperature(32).fahrenheitToCelsius()).toEqual(0)
   })
