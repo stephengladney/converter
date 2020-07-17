@@ -4,7 +4,7 @@ This is library I created in order to perform common conversions. If you'd like 
 
 ## Helpful tips
 
-- All methods that return numerical values can accept `{decimals: n}` as a parameter in the last method of the chain, where n is the number of decimals places.<br><br>
+- All methods that return numerical values can accept `{float: n}` as a parameter in the last method of the chain, where n is the number of float places.<br><br>
   _Example:_
 
 ```typescript
@@ -14,11 +14,11 @@ convertLength(2)
 
 convertLength(2)
   .miles()
-  .toKilometers({ decimals: 2 }) // 3.22
+  .toKilometers({ float: 2 }) // 3.22
 
 convertLength(2)
   .miles()
-  .toKilometers({ decimals: 0 }) // 3
+  .toKilometers({ float: 0 }) // 3
 ```
 
 ## Methods
