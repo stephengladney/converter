@@ -1,18 +1,20 @@
+type DecimalPoints = { float: number }
+
+function convertToFloat(val: number, d?: DecimalPoints) {
+  return d ? Number(val.toFixed(d.float)) : val
+}
+
 export function convertTemperature(temp: number) {
-  const celsiusToFahrenheit = () => (temp / 5) * 9 + 32
-  const fahrenheitToCelsius = () => ((temp - 32) * 5) / 9
   return {
-    celsiusToFahrenheit,
-    fahrenheitToCelsius
+    celsiusToFahrenheit: (d?: DecimalPoints) =>
+      convertToFloat((temp / 5) * 9 + 32, d),
+    fahrenheitToCelsius: (d?: DecimalPoints) =>
+      convertToFloat(((temp - 32) * 5) / 9, d)
   }
 }
 
 export function convertLength(n: number) {
-  type DecimalPoints = { decimals: number }
   let inMillimeters: number
-
-  const convertToFloat = (val: number, d?: DecimalPoints) =>
-    d ? Number(val.toFixed(d.decimals)) : val
 
   const outputMethods = {
     toCentimeters: (d?: DecimalPoints) => convertToFloat(inMillimeters / 10, d),

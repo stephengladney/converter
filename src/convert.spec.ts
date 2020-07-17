@@ -61,28 +61,40 @@ describe("convertLength", () => {
     })
   })
 
-  test("applies appropriate float when requested", () => {
+  test("applies appropriate float", () => {
     expect(
       convertLength(2)
         .miles()
-        .toKilometers({ decimals: 2 })
+        .toKilometers({ float: 2 })
     ).toEqual(3.22)
     expect(
       convertLength(2)
         .miles()
-        .toMeters({ decimals: 1 })
+        .toMeters({ float: 1 })
     ).toEqual(3218.7)
     expect(
       convertLength(2)
         .miles()
-        .toMeters({ decimals: 0 })
+        .toMeters({ float: 0 })
     ).toEqual(3219)
   })
 })
 
 describe("convertTemperature", () => {
-  test("converts Celsius to Fahrenheit", () => {
+  test("Celsius -> Fahrenheit", () => {
     expect(convertTemperature(0).celsiusToFahrenheit()).toEqual(32)
+  })
+
+  test("Fahrenheit -> Celsius", () => {
     expect(convertTemperature(32).fahrenheitToCelsius()).toEqual(0)
+  })
+
+  test("applies appropriate float", () => {
+    expect(convertTemperature(28).fahrenheitToCelsius({ float: 2 })).toEqual(
+      -2.22
+    )
+    expect(convertTemperature(38).celsiusToFahrenheit({ float: 1 })).toEqual(
+      100.4
+    )
   })
 })
