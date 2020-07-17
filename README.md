@@ -57,7 +57,24 @@ convertTemperature(32).fahrenheitToCelsius() // 0
 
 ### `convertLength`
 
-Length from one unit to another (metric or imperial)<br><br>
+Length from one unit to another (metric or imperial)
+
+<details>
+<summary>Supported cases</summary>
+<ul>
+<li><b>Metric</b></li>
+<li>millimeters</li>
+<li>centimeters</li>
+<li>meters</li>
+<li>kilometers</li>
+<li><b>Imperial</b></li>
+<li>inches</li>
+<li>feet</li>
+<li>yards</li>
+<li>miles</li>
+</ul>
+</details>
+
 _Example:_
 
 ```typescript
