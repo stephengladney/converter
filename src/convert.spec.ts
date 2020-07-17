@@ -37,9 +37,9 @@ describe("convertLength", () => {
 
   var twoMiles = {
     Millimeters: 3218687.99,
-    Centimeters: 321869,
-    Meters: 3218.69,
-    Kilometers: 3.21,
+    Centimeters: 321868.8,
+    Meters: 3218.688,
+    Kilometers: 3.218688,
     Inches: 126720,
     Feet: 10560,
     Yards: 3520,
@@ -56,7 +56,7 @@ describe("convertLength", () => {
               [`to${outputCase}`]()
               .toFixed(2)
           )
-        ).toBeCloseTo(twoMiles[outputCase])
+        ).toBeCloseTo(twoMiles[outputCase], 0)
       })
     })
   })
