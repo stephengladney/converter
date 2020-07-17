@@ -1,6 +1,7 @@
 # Methods
 
 **convertCase** - convert a string from one casing to another
+_Valid cases: camel, const, kabob, pascal, snake_
 
 ```typescript
 convertCase("helloWorld").toPascal() // "HelloWorld"
