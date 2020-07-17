@@ -1,4 +1,4 @@
-# convert.ts
+# :left_right_arrow: convert.ts
 
 This is library I created in order to perform common conversions. If you'd like to add a conversion method, feel free to reach out to become a contributor.
 
