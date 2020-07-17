@@ -61,20 +61,21 @@ Length from one unit to another (metric or imperial)
 
 <details>
 <summary>Supported cases</summary>
-<ul>
-<ul><b>Metric</b>
-<li>millimeters</li>
+<ol>
+<li><b>Metric</b></li>
+<ul><li>millimeters</li>
 <li>centimeters</li>
 <li>meters</li>
 <li>kilometers</li>
 </ul>
-<ul><b>Imperial</b>
+<li><b>Imperial</b></li>
+<ul>
 <li>inches</li>
 <li>feet</li>
 <li>yards</li>
 <li>miles</li>
 </ul>
-</ul>
+</ol>
 </details>
 
 _Example:_
