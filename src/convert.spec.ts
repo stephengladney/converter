@@ -56,7 +56,7 @@ describe("convertLength", () => {
               [`to${outputCase}`]()
               .toFixed(2)
           )
-        ).toBeCloseTo(twoMiles[outputCase], 0)
+        ).toBeCloseTo(twoMiles[outputCase], 1)
       })
     })
   })
