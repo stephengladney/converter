@@ -23,7 +23,7 @@ convertLength(2)
 
 ## Methods
 
-### convertCase
+### `convertCase`
 
 String from one casing to another.
 _(Supported cases: camel, const, kabob, pascal, snake, string)_<br><br>
@@ -43,7 +43,7 @@ convertTemperature(100).celsiusToFahrenheit() // 212
 convertTemperature(32).fahrenheitToCelsius() // 0
 ```
 
-### convertLength
+### `convertLength`
 
 Length from one unit to another (metric or imperial)<br><br>
 _Example:_
