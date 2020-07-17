@@ -7,7 +7,54 @@ export function convertTemperature(temp: number) {
   }
 }
 
-export function measurement(n: number) {}
+export function convertLength(n: number, decimals?: number) {
+  let inMillimeters: number
+  const outputMethods = {
+    toCentimeters: () => inMillimeters / 10,
+    toFeet: () => inMillimeters / (25.4 * 12),
+    toInches: () => inMillimeters / 25.4,
+    toKilometers: () => inMillimeters / 1000000,
+    toMeters: () => inMillimeters / 1000,
+    toMiles: () => inMillimeters / (25.4 * 12 * 5280),
+    toMillimeters: () => inMillimeters,
+    toYards: () => inMillimeters / (25.4 * 12 * 3)
+  }
+  const inputMethods = {
+    millimeters: () => {
+      inMillimeters = n
+      return outputMethods
+    },
+    centimeters: () => {
+      inMillimeters = n * 10
+      return outputMethods
+    },
+    meters: () => {
+      inMillimeters = n * 1000
+      return outputMethods
+    },
+    kilometers: () => {
+      inMillimeters = n * 1000000
+      return outputMethods
+    },
+    inches: () => {
+      inMillimeters = n * 25.4
+      return outputMethods
+    },
+    feet: () => {
+      inMillimeters = n * 25.4 * 12
+      return outputMethods
+    },
+    yards: () => {
+      inMillimeters = n * 25.4 * 12 * 3
+      return outputMethods
+    },
+    miles: () => {
+      inMillimeters = n * 25.4 * 12 * 5280
+      return outputMethods
+    }
+  }
+  return inputMethods
+}
 
 /**```typescript
  *convertCase("helloWorld").toPascal() // "HelloWorld"

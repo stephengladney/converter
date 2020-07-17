@@ -1,4 +1,4 @@
-import { convertCase, convertTemperature } from "./convert"
+import { convertCase, convertLength, convertTemperature } from "./convert"
 
 describe("convertCase", () => {
   var cases = ["Camel", "Const", "Kabob", "Pascal", "Snake", "String"]
@@ -18,6 +18,45 @@ describe("convertCase", () => {
         expect(convertCase(casedText[inputCase])[`to${outputCase}`]()).toEqual(
           casedText[outputCase]
         )
+      })
+    })
+  })
+})
+
+describe("convertLength", () => {
+  var units = [
+    "Millimeters",
+    "Centimeters",
+    "Meters",
+    "Kilometers",
+    "Inches",
+    "Feet",
+    "Yards",
+    "Miles"
+  ]
+
+  var twoMiles = {
+    Millimeters: 3218687.99,
+    Centimeters: 321869,
+    Meters: 3218.69,
+    Kilometers: 3.21,
+    Inches: 126720,
+    Feet: 10560,
+    Yards: 3520,
+    Miles: 2
+  }
+
+  units.forEach(inputCase => {
+    units.forEach(outputCase => {
+      test(`${inputCase} -> ${outputCase}`, () => {
+        expect(
+          Number(
+            convertLength(twoMiles[inputCase])
+              [inputCase.toLowerCase()]()
+              [`to${outputCase}`]()
+              .toFixed(2)
+          )
+        ).toBeCloseTo(twoMiles[outputCase])
       })
     })
   })
