@@ -3,9 +3,7 @@
 **convertCase** - convert a string from one casing to another
 
 ```javascript
-convertCase("helloWorld")
-  .fromCamel()
-  .toPascal() // "HelloWorld"
+convertCase("helloWorld").toPascal() // "HelloWorld"
 ```
 
 **convertTemperature** - convert a temperature from/to Celsius/Fahrenheit
@@ -13,8 +11,4 @@ convertCase("helloWorld")
 ```javascript
 convertTemperature(100).celsiusToFahrenheit() // 212
 convertTemperature(32).fahrenheitToCelsius() // 0
-
-convertCase("helloWorld")
-  .fromCamel()
-  .toPascal()
 ```

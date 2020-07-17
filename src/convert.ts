@@ -9,24 +9,29 @@ export function convertTemperature(temp: number) {
 
 export function measurement(n: number) {}
 
-export type ConvertCaseFormats =
-  | "const"
-  | "snake"
-  | "kabob"
-  | "camel"
-  | "pascal"
-  | "string"
-
 /**```typescript
- *"const" | "snake" | "kabob" | "camel" | "pascal" | "string"
- *
- *convertCase("helloWorld").from("camel").to("pascal")
- *=> "HelloWorld"
+ *convertCase("helloWorld").toPascal() // "HelloWorld"
  * ```
  */
 export function convertCase(str: string) {
   let wordArray = []
-  const outputMethods = {
+  if (str.includes("_")) wordArray = str.split("_")
+  else if (str.includes("-")) wordArray = str.split("-")
+  else if (str.includes(" ")) wordArray = str.split(" ")
+  else {
+    const isLowerCase = str[0] === str[0].toLowerCase()
+    const wordStartIndexes = isLowerCase ? [0] : []
+    str
+      .split("")
+      .forEach((letter, i) =>
+        letter === letter.toUpperCase() ? wordStartIndexes.push(i) : null
+      )
+    wordStartIndexes.forEach((index, i) => {
+      const endOfWord = wordStartIndexes[i + 1]
+      wordArray.push(str.substring(index, endOfWord).toLowerCase())
+    })
+  }
+  return {
     toConst: () => wordArray.join("_").toUpperCase(),
     toKabob: () => wordArray.join("-").toLowerCase(),
     toSnake: () => wordArray.join("_").toLowerCase(),
@@ -46,50 +51,5 @@ export function convertCase(str: string) {
         })
         .join(""),
     toString: () => wordArray.join(" ").toLowerCase()
-  }
-
-  return {
-    fromConst: () => {
-      wordArray = String(str).split("_")
-      return outputMethods
-    },
-    fromSnake: () => {
-      wordArray = String(str).split("_")
-      return outputMethods
-    },
-    fromKabob: () => {
-      wordArray = String(str).split("-")
-      return outputMethods
-    },
-    fromCamel: () => {
-      const wordStartIndexes = [0]
-      str
-        .split("")
-        .forEach((letter, i) =>
-          letter === letter.toUpperCase() ? wordStartIndexes.push(i) : null
-        )
-      wordStartIndexes.forEach((index, i) => {
-        const endOfWord = wordStartIndexes[i + 1]
-        wordArray.push(str.substring(index, endOfWord).toLowerCase())
-      })
-      return outputMethods
-    },
-    fromPascal: () => {
-      const wordStartIndexes = []
-      str
-        .split("")
-        .forEach((letter, i) =>
-          letter === letter.toUpperCase() ? wordStartIndexes.push(i) : null
-        )
-      wordStartIndexes.forEach((index, i) => {
-        const endOfWord = wordStartIndexes[i + 1]
-        wordArray.push(str.substring(index, endOfWord).toLowerCase())
-      })
-      return outputMethods
-    },
-    fromString: () => {
-      wordArray = String(str).split(" ")
-      return outputMethods
-    }
   }
 }

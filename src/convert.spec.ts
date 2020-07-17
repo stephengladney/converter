@@ -15,11 +15,9 @@ describe("convertCase", () => {
   cases.forEach(inputCase => {
     cases.forEach(outputCase => {
       test(`${inputCase} -> ${outputCase}`, () => {
-        expect(
-          convertCase(casedText[inputCase])
-            [`from${inputCase}`]()
-            [`to${outputCase}`]()
-        ).toEqual(casedText[outputCase])
+        expect(convertCase(casedText[inputCase])[`to${outputCase}`]()).toEqual(
+          casedText[outputCase]
+        )
       })
     })
   })
