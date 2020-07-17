@@ -20,7 +20,8 @@ export type ConvertCaseFormats =
 /**```typescript
  *"const" | "snake" | "kabob" | "camel" | "pascal" | "string"
  *
- *convertCase("helloWorld").from("camel").to("pascal") // "HelloWorld"
+ *convertCase("helloWorld").from("camel").to("pascal")
+ *=> "HelloWorld"
  * ```
  */
 export function convertCase(str: string) {
