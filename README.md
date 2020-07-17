@@ -38,7 +38,7 @@ String from one casing to another.
 <li>string</li>
 </ul>
 </details>
-<br><br>
+
 _Example:_
 
 ```typescript
