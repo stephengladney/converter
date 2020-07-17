@@ -23,7 +23,8 @@ convertLength(2)
 
 ## Methods
 
-###convertCase###
+### convertCase
+
 Convert a string from one casing to another.
 _(Supported cases: camel, const, kabob, pascal, snake, string)_<br><br>
 _Example:_
