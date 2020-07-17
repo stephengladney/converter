@@ -33,7 +33,7 @@ _Example:_
 convertCase("helloWorld").toPascal() // "HelloWorld"
 ```
 
-### convertTemperature
+### `convertTemperature`
 
 Temperature from/to Celsius/Fahrenheit<br><br>
 _Example:_
