@@ -4,6 +4,17 @@
 
 ```javascript
 convertCase("helloWorld")
-  .from("camel")
-  .to("pascal") // HelloWorld
+  .fromCamel()
+  .toPascal() // "HelloWorld"
+```
+
+**convertTemperature** - convert a temperature from/to Celsius/Fahrenheit
+
+```javascript
+convertTemperature(100).celsiusToFahrenheit() // 212
+convertTemperature(32).fahrenheitToCelsius() // 0
+
+convertCase("helloWorld")
+  .fromCamel()
+  .toPascal()
 ```

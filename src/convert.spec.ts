@@ -1,32 +1,25 @@
-import { convertCase, ConvertCaseFormats, convertTemperature } from "./convert"
-
-var caseTypes: ConvertCaseFormats[] = [
-  "camel",
-  "const",
-  "kabob",
-  "pascal",
-  "snake",
-  "string"
-]
-var casedText = {
-  camel: "helloWorld",
-  const: "HELLO_WORLD",
-  kabob: "hello-world",
-  pascal: "HelloWorld",
-  snake: "hello_world",
-  string: "hello world"
-}
+import { convertCase, convertTemperature } from "./convert"
 
 describe("convertCase", () => {
-  caseTypes.forEach(caseType1 => {
-    caseTypes.forEach(caseType2 => {
-      test(`${caseType1} -> ${caseType2}`, () => {
+  var cases = ["Camel", "Const", "Kabob", "Pascal", "Snake", "String"]
+
+  var casedText = {
+    Camel: "helloWorld",
+    Const: "HELLO_WORLD",
+    Kabob: "hello-world",
+    Pascal: "HelloWorld",
+    Snake: "hello_world",
+    String: "hello world"
+  }
+
+  cases.forEach(inputCase => {
+    cases.forEach(outputCase => {
+      test(`${inputCase} -> ${outputCase}`, () => {
         expect(
-          convertCase(casedText[caseType1])
-            .from(caseType1)
-            .to(caseType2)
-        ).toEqual(casedText[caseType2])
-        // })
+          convertCase(casedText[inputCase])
+            [`from${inputCase}`]()
+            [`to${outputCase}`]()
+        ).toEqual(casedText[outputCase])
       })
     })
   })
