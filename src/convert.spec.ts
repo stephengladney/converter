@@ -1,4 +1,9 @@
-import { convertCase, convertLength, convertTemperature } from "./convert"
+import {
+  convertCase,
+  convertLength,
+  convertTemperature,
+  convertTime
+} from "./convert"
 
 describe("convertCase", () => {
   var cases = ["Camel", "Const", "Kabob", "Pascal", "Snake", "String"]
@@ -96,5 +101,32 @@ describe("convertTemperature", () => {
     expect(convertTemperature(38).celsiusToFahrenheit({ float: 1 })).toEqual(
       100.4
     )
+  })
+})
+
+describe("convertTime", () => {
+  const units = ["Seconds", "Minutes", "Hours", "Days", "Weeks", "Years"]
+  const oneYear = {
+    Seconds: 31536000,
+    Minutes: 525600,
+    Hours: 8760,
+    Days: 365,
+    Weeks: 52.142857142857146,
+    Years: 1
+  }
+
+  units.forEach(inputCase => {
+    units.forEach(outputCase => {
+      test(`${inputCase} -> ${outputCase}`, () => {
+        expect(
+          Number(
+            convertTime(oneYear[inputCase])
+              [inputCase.toLowerCase()]()
+              [`to${outputCase}`]()
+              .toFixed(2)
+          )
+        ).toBeCloseTo(oneYear[outputCase], 1)
+      })
+    })
   })
 })

@@ -111,3 +111,44 @@ export function convertCase(str: string) {
     toString: () => wordArray.join(" ").toLowerCase()
   }
 }
+
+export function convertTime(n: number) {
+  let nInSeconds
+  const outputMethods = {
+    toSeconds: () => nInSeconds,
+    toMinutes: (d?: DecimalPoints) => convertToFloat(nInSeconds / 60, d),
+    toHours: (d?: DecimalPoints) => convertToFloat(nInSeconds / 3600, d),
+    toDays: (d?: DecimalPoints) => convertToFloat(nInSeconds / (3600 * 24), d),
+    toWeeks: (d?: DecimalPoints) =>
+      convertToFloat(nInSeconds / (3600 * 24 * 7), d),
+    toYears: (d?: DecimalPoints) =>
+      convertToFloat(nInSeconds / (3600 * 24 * 364), d)
+  }
+  const inputMethods = {
+    seconds: () => {
+      nInSeconds = n
+      return outputMethods
+    },
+    minutes: () => {
+      nInSeconds = n * 60
+      return outputMethods
+    },
+    hours: () => {
+      nInSeconds = n * 3600
+      return outputMethods
+    },
+    days: () => {
+      nInSeconds = n * 3600 * 24
+      return outputMethods
+    },
+    weeks: () => {
+      nInSeconds = n * 3600 * 24 * 7
+      return outputMethods
+    },
+    years: () => {
+      nInSeconds = n * 3600 * 24 * 365
+      return outputMethods
+    }
+  }
+  return inputMethods
+}
