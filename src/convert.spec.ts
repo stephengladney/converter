@@ -6,9 +6,9 @@ import {
 } from "./convert"
 
 describe("convertCase", () => {
-  var cases = ["Camel", "Const", "Kabob", "Pascal", "Snake", "String"]
+  const cases = ["Camel", "Const", "Kabob", "Pascal", "Snake", "String"]
 
-  var casedText = {
+  const casedText = {
     Camel: "helloWorld",
     Const: "HELLO_WORLD",
     Kabob: "hello-world",
@@ -29,7 +29,7 @@ describe("convertCase", () => {
 })
 
 describe("convertLength", () => {
-  var units = [
+  const units = [
     "Millimeters",
     "Centimeters",
     "Meters",
@@ -40,7 +40,7 @@ describe("convertLength", () => {
     "Miles"
   ]
 
-  var twoMiles = {
+  const twoMiles = {
     Millimeters: 3218687.99,
     Centimeters: 321868.8,
     Meters: 3218.688,
