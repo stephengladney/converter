@@ -85,3 +85,27 @@ convertLength(2)
   .miles()
   .toKilometers() // 3.218688
 ```
+
+### `convertTime`
+
+Length from one unit to another (metric or imperial)
+
+<details>
+<summary>Supported units</summary>
+<ul>
+<li>seconds</li>
+<li>minutes</li>
+<li>hours</li>
+<li>days</li>
+<li>weeks</li>
+<li>years</li>
+</ul>
+</details>
+
+_Example:_
+
+```typescript
+convertTime(2)
+  .weeks()
+  .toMinutes() // 20160
+```
