@@ -1,6 +1,6 @@
 # :left_right_arrow: convert.ts
 
-This is library I created in order to perform common conversions. If you'd like to add a conversion method, feel free to reach out to become a contributor.
+This is a library I created in order to perform common conversions. And to practice TypeScript.
 
 ## Helpful tips
 
@@ -25,7 +25,7 @@ convertLength(2)
 
 ### `convertCase`
 
-String from one casing to another.
+String from one casing to another. Starting case is detected automatically.
 
 <details>
 <summary>Supported cases</summary>
